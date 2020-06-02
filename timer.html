@@ -10,7 +10,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css">
 	<link href="styles.css" rel="stylesheet" type="text/css">
 	<link href="bootstrap.min.css" rel="stylesheet" type="text/css">
-	<link href="core.css" rel="stylesheet" type="text/css">
+	
 
 	<link href="colors.min.css" rel="stylesheet" type="text/css">
 	<!-- /global stylesheets -->
@@ -33,16 +33,147 @@
 
 <body>
     <style>
-    .heading-elements {
-    background-color: inherit;
-    position: absolute;
-    top: 50%;
-    right: 20px;
-    height: 38px;
-    margin-top: -19px;
-        }
-        .heading-elements .heading-btn-group {
-    font-size: 0;
+        .heading-elements {
+        background-color: inherit;
+        position: absolute;
+        top: 50%;
+        right: 20px;
+        height: 38px;
+        margin-top: -19px;
+            }
+            .heading-elements .heading-btn-group {
+        font-size: 0;
+            }
+                    .page-header {
+        margin: 0;
+        padding: 0;
+        border-bottom-width: 0;
+    }
+      .page-header-default {
+        background-color: #fff;
+        margin-bottom: 30px;
+        -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    }
+
+            .page-header-content {
+        position: relative;
+        background-color: inherit;
+        padding: 0 20px;
+    }
+            .page-title {
+        padding: 32px 36px 32px 0;
+        display: block;
+        position: relative;
+    }
+            .btn {
+        position: relative;
+        font-weight: 500;
+        text-transform: uppercase;
+        border-width: 0;
+        padding: 9px 17px;
+    }
+            .page-header-default .page-header-content + .breadcrumb-line, .page-header-inverse .page-header-content + .breadcrumb-line {
+        border-top: 1px solid #ddd;
+        margin-bottom: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    .page-header-default .breadcrumb-line:not([class*=bg-]) {
+        background-color: #fcfcfc;
+    }
+    .page-header-content + .breadcrumb-line {
+        margin-bottom: 20px;
+    }
+    .breadcrumb-line:not([class*=bg-]) {
+        background-color: #fff;
+    }
+    .breadcrumb-line {
+        position: relative;
+        padding-left: 20px;
+        padding-right: 20px;
+        -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    }
+            media (min-width: 769px)
+    .breadcrumb-line .breadcrumb {
+        float: left;
+        margin-right: 0;
+    }
+
+    .breadcrumb-line .breadcrumb {
+        margin-right: 46px;
+    }
+    .breadcrumb {
+        border-radius: 0;
+        margin-bottom: 0;
+    }
+            .breadcrumb > li {
+        position: relative;
+    }
+            .breadcrumb > li > a {
+        color: #333333;
+    }
+    a, button, input, textarea {
+        outline: 0;
+    }
+
+    a {
+        cursor: pointer;
+    }
+            .breadcrumb > li i {
+        display: inline-block;
+        font-size: 12px;
+    }
+            .breadcrumb-line:after {
+        content: '';
+        display: table;
+        clear: both;
+    }
+    .position-left {
+        margin-right: 8px;
+    }
+            .panel {
+        margin-bottom: 20px;
+        border-width: 0;
+        color: #333333;
+        -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    }
+            .panel-flat > .panel-heading {
+        background-color: #fff;
+    }
+
+    .panel-heading {
+        position: relative;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        border-top-right-radius: 3px;
+        border-top-left-radius: 3px;
+    }.panel-flat > .panel-heading > .panel-title {
+        margin-top: 2px;
+        margin-bottom: 2px;
+    }
+
+    h5.panel-title, .h5.panel-title {
+        font-size: 17px;
+    }
+    .panel-title {
+        position: relative;
+        font-size: 13px;
+    }.panel-flat > .panel-heading + .panel-body {
+        padding-top: 0;
+    }
+
+    .panel-body {
+        position: relative;
+    }
+            .svg-center svg {
+        margin: auto;
+    }
+        .svg {
+            display: block;
         }
     </style>
 
