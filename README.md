@@ -1,5 +1,6 @@
 # Visual countdown timer
 A visual countdown timer to help with productivity
+![alt text](https://github.com/baconbro/visual-countdown-timer/blob/master/Visualscreen.png "Visual timer countdown")
 
 [DEMO](https://smartrday.com/tools/timer.html)
 
