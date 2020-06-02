@@ -5,6 +5,6 @@ A visual countdown timer to help with productivity
 [DEMO](https://smartrday.com/tools/timer.html)
 
 Productivity technique to use with :
-- Pomodoro technic
-- Time Timer
-- Bullet point journal
+- [Pomodoro technic](https://francescocirillo.com/pages/pomodoro-technique)
+- [Time Timer](https://www.timetimer.com/)
+- [Bullet point journal](https://bulletjournal.com/)
