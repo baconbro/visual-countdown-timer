@@ -11,8 +11,8 @@ Productivity technique to use with :
 
 ## TODO
 ---
-[ ]add 30 minutes button
-[ ]add 120 minutes button
-[ ]add X minutes custom change
-[ ]add dynamic marker
-[ ]add end sound and visual 
+- [ ] add 30 minutes button
+- [ ] add 120 minutes button
+- [ ] add X minutes custom change
+- [ ] add dynamic marker
+- [ ] add end sound and visual 
