@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Visual countdown timer by Baconbro</title>
+
+	<!-- Global stylesheets -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css">
+	<link href="styles.css" rel="stylesheet" type="text/css">
+	<link href="bootstrap.min.css" rel="stylesheet" type="text/css">
+	<link href="core.css" rel="stylesheet" type="text/css">
+	<link href="components.min.css" rel="stylesheet" type="text/css">
+	<link href="colors.min.css" rel="stylesheet" type="text/css">
+	<!-- /global stylesheets -->
+
+	<!-- Core JS files -->
+	<script src="jquery.min.js"></script>
+	<script src="bootstrap.min.js"></script>
+	<!-- /core JS files -->
+
+	<!-- Theme JS files -->
+	<script src="d3.min.js"></script>
+
+	<script src="pie_arc_tween.js"></script>
+	<script src="donut_arc_tween.js"></script>
+
+	<script src="ripple.min.js"></script>
+	<!-- /theme JS files -->
+
+</head>
+
+<body>
+
+	<!-- Page container -->
+	<div class="page-container">
+
+		<!-- Page content -->
+		<div class="page-content">
+
+
+			<!-- Main content -->
+			<div class="content-wrapper">
+
+				<!-- Page header -->
+				<div class="page-header page-header-default">
+					<div class="page-header-content">
+						<div class="page-title">
+							<h4> Visual countdown timer</h4>
+						</div>
+
+						<div class="heading-elements">
+							<div class="heading-btn-group">
+                                <a href="#" onclick="location.reload();"class="btn bg-primary-400 legitRipple"><i class="icon-alarm mr-2"></i> 60 minutes</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="breadcrumb-line">
+						<ul class="breadcrumb">
+							<li><a href="/"><i class="icon-home2 position-left"></i> Smartrday</a></li>
+							<li><a href="#">Tools</a></li>
+							<li class="active">Visual countdown</li>
+						</ul>
+					</div>
+				</div>
+				<!-- /page header -->
+
+
+				<!-- Content area -->
+				<div class="content">
+
+					<!-- Basic pie charts -->
+					<div class="row">
+						<div class="col-md-12">
+							<div class="panel panel-flat">
+								<div class="panel-heading">
+									<h5 class="panel-title"></h5>
+								</div>
+
+								<div class="panel-body">
+									<div class="content-group">
+
+										<div class="chart-container text-center">
+											<div class="chart svg-center" id="d3-pie-arc-tween"></div>
+										</div>
+                                        <p id="demo"></p>
+
+<script>
+// Set the date we're counting down to
+var countDownDate = new Date();
+    countDownDate.setHours(countDownDate.getHours() + 1);
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get today's date and time
+  var now = new Date().getTime();
+    
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+    
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+  // Output the result in an element with id="demo"
+  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+    
+  // If the count down is over, write some text 
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "EXPIRED";
+  }
+}, 1000);
+</script>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+					<!-- /basic pie charts -->
+
+
+
+					<!-- Footer -->
+					<div class="footer text-muted">
+						&copy; 2020 by Baconbro. View on <a href="https://github.com/baconbro/visual-countdown-timer" target="_blank">Github</a>
+					</div>
+					<!-- /footer -->
+
+				</div>
+				<!-- /content area -->
+
+			</div>
+			<!-- /main content -->
+
+		</div>
+		<!-- /page content -->
+
+	</div>
+	<!-- /page container -->
+
+</body>
+</html>

@@ -1,0 +1,107 @@
+/* ------------------------------------------------------------------------------
+ *
+ *  # D3.js - arc tween animation
+ *
+ *  Demo d3.js demonstration of arc tween animation
+ *
+ *  Version: 1.0
+ *  Latest update: August 1, 2015
+ *
+ * ---------------------------------------------------------------------------- */
+
+document.addEventListener('DOMContentLoaded', function() {
+
+    // Initialize chart
+    pieTweenAnimation('#d3-pie-arc-tween', 240);
+
+    // Chart setup
+    function pieTweenAnimation(element, radius) {
+
+
+        // Basic setup
+        // ------------------------------
+
+        // Define main variables
+        var τ = 2 * Math.PI;
+
+
+        // Create chart
+        // ------------------------------
+
+        // Add SVG element
+        var container = d3.select(element).append("svg");
+
+        // Add SVG group
+        var svg = container
+            .attr("width", radius * 2)
+            .attr("height", radius * 2)
+            .append("g")
+                .attr("transform", "translate(" + radius + "," + radius + ")");
+
+
+        // Construct chart layout
+        // ------------------------------
+
+        // Arc
+        var arc = d3.svg.arc()
+            .outerRadius(radius)
+            .innerRadius(0)
+            .startAngle(0);
+
+
+        //
+        // Append chart elements
+        //
+
+        // Add the background arc, from 0 to 100% (τ).
+        var background = svg.append("path")
+            .datum({endAngle: τ})
+            .style("fill", "#f5f5f5")
+            .attr("d", arc);
+
+        // Add the foreground arc in orange, currently showing 12.7%.
+        var foreground = svg.append("path")
+            .datum({endAngle: 1 * τ})
+            .style("fill", "#81C784")
+            .attr("d", arc);
+        // Set the date we're counting down to
+        var countDownDate = new Date();
+        countDownDate.setHours(countDownDate.getHours() + 1);
+        let a = 3600;
+
+        // Start a transition to a new random angle
+        setInterval(function() {
+            
+            // Get today's date and time
+            var now = new Date().getTime();
+    
+            // Find the distance between now and the count down date
+            var distance = countDownDate - now;
+            var seconds = Math.floor((distance % (1000 * 3600)) / 1000);
+            console.log(seconds);
+          foreground.transition()
+              .duration(700)
+              .call(arcTween, (1/3600*seconds) * τ);
+        }, 1000);
+
+        // Creates a tween on the specified transition's "d" attribute, transitioning
+        // any selected arcs from their current angle to the specified new angle.
+        function arcTween(transition, newAngle) {
+            transition.attrTween("d", function(d) {
+
+                // Interpolate between the two angles
+                var interpolate = d3.interpolate(d.endAngle, newAngle);
+
+                // Return value of the attrTween
+                return function(t) {
+
+                    // Calculate the current arc angle based on the transition time, t
+                    d.endAngle = interpolate(t);
+
+                    // Lastly, compute the arc path given the updated data
+                    return arc(d);
+                };
+            });
+        }
+    }
+});
